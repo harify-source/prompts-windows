@@ -52,7 +52,7 @@ public partial class SettingsWindow : Window
         Keyboard.Focus(RecorderBorder);
     }
 
-    private void OnRecorderKeyDown(object sender, KeyEventArgs e)
+    private void OnRecorderKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
     {
         if (!_recording) return;
         e.Handled = true;

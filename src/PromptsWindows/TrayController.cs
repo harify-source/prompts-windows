@@ -42,7 +42,7 @@ public sealed class TrayController : IDisposable
         _icon.Dispose();
     }
 
-    private void OnMouseClick(object? sender, MouseEventArgs e)
+    private void OnMouseClick(object? sender, System.Windows.Forms.MouseEventArgs e)
     {
         if (e.Button == MouseButtons.Left)
         {
