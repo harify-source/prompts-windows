@@ -1,0 +1,47 @@
+<Window x:Class="PromptsWindows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prompts Settings"
+        Width="440"
+        Height="380"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="True">
+  <ScrollViewer Padding="20">
+    <StackPanel>
+      <TextBlock Text="Shortcut" FontWeight="SemiBold" Margin="0,0,0,8" />
+      <TextBlock TextWrapping="Wrap"
+                 Foreground="#666666"
+                 Margin="0,0,0,8"
+                 Text="Press this anywhere to show or hide Prompts. Click the field, then press a combination that includes Ctrl, Alt, or Win. Backspace clears it." />
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+        <Border x:Name="RecorderBorder"
+                BorderBrush="#CCCCCC"
+                BorderThickness="1"
+                CornerRadius="4"
+                Width="200"
+                Height="30"
+                Background="White"
+                MouseLeftButtonDown="OnRecorderClick"
+                Focusable="True"
+                KeyDown="OnRecorderKeyDown"
+                PreviewKeyDown="OnRecorderKeyDown">
+          <TextBlock x:Name="RecorderLabel"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="None" />
+        </Border>
+        <Button Content="Clear" Width="72" Height="30" Margin="8,0,0,0" Click="OnClearClick" />
+      </StackPanel>
+      <TextBlock x:Name="ShortcutStatus" Foreground="#666666" Margin="0,0,0,20" TextWrapping="Wrap" />
+
+      <TextBlock Text="Startup" FontWeight="SemiBold" Margin="0,0,0,8" />
+      <TextBlock TextWrapping="Wrap"
+                 Foreground="#666666"
+                 Margin="0,0,0,8"
+                 Text="The tray icon appears when you sign in. The window stays closed until you open it." />
+      <CheckBox x:Name="LoginToggle" Content="Open at login" Checked="OnLoginToggle" Unchecked="OnLoginToggle" />
+      <TextBlock x:Name="LoginStatus" Foreground="#666666" Margin="0,8,0,0" TextWrapping="Wrap" />
+    </StackPanel>
+  </ScrollViewer>
+</Window>
